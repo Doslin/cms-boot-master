@@ -1,0 +1,34 @@
+#服务器配置
+server:
+  port: 9999
+
+spring:
+  #模板引擎配置
+  thymeleaf:
+    mode: LEGACYHTML5
+  #热编译设置
+  devtools:
+    restart:
+      enabled: false
+  #数据源配置
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cms_boot?characterEncoding=utf8&useSSL=false
+    username: root
+    password: BvcxzgfD1
+  #会话配置
+  session:
+    store-type: redis
+
+
+#日志配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com:
+      lanshiqin:  debug
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/core/*
+  type-aliases-package: com.lanshiqin.cmsboot.core.dao
